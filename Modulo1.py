@@ -4,13 +4,10 @@ def NumeroBinario(numero=int):
     representación binaria. Recibe y devuelve un valor de tipo entero.
     En caso de que el parámetro no sea de tipo entero y mayor a -1 retorna nulo.
     '''
-    bin=[]
-    binario=[]
-    lis2=[]
-    p=''
+    bin=[],binario=[], lis2=[], p=''
+    
     if numero<0 or type(numero)!=int:
         return None
-
     while numero>0: #Mi condicion irá bajando respecto al nuevo valor asiganado a la variable
                     #Derivado de hacer la primer iteración
 
@@ -20,17 +17,13 @@ def NumeroBinario(numero=int):
             bin.append(1)
         #print(numero) #Para pruebas
         numero=int(numero/2)
-
     for i in range (0,len(bin)): #Reverse
         binario.append(bin[-i-1])
-    
     for j in binario: #Pasar a una lista donde unicamente datos sean tipo string
         if type(j)==int:
             lis2.append(str(j))
-
     for k in range (len(lis2)): #Concatenar los numeros de tipo string
         p+=lis2[k]   
-
     n=int(p) #Pasar los datos (numeros) concatenados a entero 
 
     return n #Imprimirlos en un entero
